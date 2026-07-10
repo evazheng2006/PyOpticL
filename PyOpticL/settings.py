@@ -1,6 +1,3 @@
-from PyOpticL import utils
-from importlib import reload
-
 measurement_system = "imperial"
 minimum_thread_engagement = 8
 default_extra_drill_depth = 10
@@ -19,7 +16,6 @@ def set_measurement_system(system: str):
     global measurement_system
     if system.lower() in ["metric", "imperial"]:
         measurement_system = system.lower()
-        reload(utils)
     else:
         raise ValueError("Invalid system preference. Use 'metric' or 'imperial'.")
 
